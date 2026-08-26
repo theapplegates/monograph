@@ -13,7 +13,42 @@ cover:
   creditUrl: "https://unsplash.com/photos/abstract-purple-and-blue-light-streaks-with-a-glass-orb-7HRu1KzpLjg"
 featured: false
 ---
-
+<picture>
+  <source
+    type="image/jxl"
+    srcset="
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_596/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 596w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_960/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 960w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_1245/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 1245w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_1365/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 1365w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_1440/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 1440w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1440px"
+  />
+  <source
+    type="image/avif"
+    srcset="
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_596/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 596w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_960/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 960w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_1245/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 1245w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_1365/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 1365w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_1440/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 1440w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1440px"
+  />
+  <img
+    src="https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_800/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp"
+    srcset="
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_596/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 596w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_960/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 960w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_1245/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 1245w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_1365/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 1365w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_1440/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 1440w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 1440px"
+    alt=""
+    loading="lazy"
+    width="1440"
+    height="810"
+  />
+</picture> 
 API versioning fails when it surprises people. A perfectly designed URL scheme cannot save a platform that changes behavior without warning, deprecates too aggressively, or leaves old versions alive with no support story.
 
 The goal is not to avoid breaking changes forever. It is to make change survivable.

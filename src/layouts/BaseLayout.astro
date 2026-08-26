@@ -44,6 +44,7 @@ const schema = structuredData ?? defaultStructuredData;
 <!doctype html>
 <html lang={siteConfig.language} data-theme="light">
   <head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.14.1/cloudinary-core-shrinkwrap.js" integrity="sha512-Hozv34RZUUJinhtQOmotIXFFQm3PfqLft1Bsj7qTXZ/E228GscyCbvB5tmHJhPh4riMvo825MpUmXcEutDS6Mw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href="/fonts/geist/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
@@ -127,6 +128,15 @@ const schema = structuredData ?? defaultStructuredData;
         });
       })();
     </script>
+	<script type="text/javascript">
+		my_breakpoints = function (width){  // width - the current width of the containing element
+		  return 50 * Math.ceil(width / 50);
+		}
+		var cl = cloudinary.Cloudinary.new({cloud_name: "paulapplegate-com"}); 
+		// replace 'demo' with your cloud name in the line above 
+		cl.config({breakpoints:my_breakpoints, responsive_use_breakpoints:"resize"})
+		cl.responsive();
+	</script>
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
