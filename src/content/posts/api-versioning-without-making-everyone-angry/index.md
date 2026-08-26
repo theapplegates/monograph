@@ -48,7 +48,45 @@ featured: false
     width="1440"
     height="810"
   />
-</picture> 
+</picture>
+
+<picture>
+  <source
+    type="image/jxl"
+    srcset="
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_480/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 480w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_1490/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 1490w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_2140/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 2140w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_2599/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 2599w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_jxl/c_scale,w_2800/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.jxl 2800w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 2800px"
+  />
+  <source
+    type="image/avif"
+    srcset="
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_480/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 480w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_1490/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 1490w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_2140/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 2140w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_2599/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 2599w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_avif/c_scale,w_2800/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.avif 2800w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 2800px"
+  />
+  <img
+    src="https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_800/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp"
+    srcset="
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_480/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 480w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_1490/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 1490w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_2140/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 2140w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_2599/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 2599w,
+    https://res.cloudinary.com/paulapplegate-com/image/upload/q_auto,f_webp/c_scale,w_2800/v1787714831/breakpoints/vzwuvo8hve2ohsxjcbkp.webp 2800w"
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 2800px"
+    alt=""
+    loading="lazy"
+    width="2800"
+    height="1573"
+  />
+</picture>
+ 
 API versioning fails when it surprises people. A perfectly designed URL scheme cannot save a platform that changes behavior without warning, deprecates too aggressively, or leaves old versions alive with no support story.
 
 The goal is not to avoid breaking changes forever. It is to make change survivable.
