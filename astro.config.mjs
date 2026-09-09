@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { unified } from "@astrojs/markdown-remark";
@@ -8,6 +8,9 @@ import { siteConfig } from "./src/config/site.ts";
 import { codeThemes, codeDefaultColor } from "./src/config/code.ts";
 
 import mdx from "@astrojs/mdx";
+import rehypeRaw from "rehype-raw";
+import rehypeCloudinaryPicture from "./src/plugins/rehype-cloudinary-picture.mjs";
+import remarkCloudinaryPicture from "./src/plugins/remark-cloudinary-picture.mjs";
 
 const shikiConfig = /** @type {const} */ ({
   themes: codeThemes,
@@ -16,15 +19,18 @@ const shikiConfig = /** @type {const} */ ({
 
 export default defineConfig({
   site: siteConfig.siteUrl,
+  image: { service: passthroughImageService() },
   integrations: [
     sitemap({
       filter: (page) => page !== new URL("/search/", siteConfig.siteUrl).toString(),
     }),
-    mdx(),
+    mdx({
+      processor: unified({ remarkPlugins: [remarkCloudinaryPicture], rehypePlugins: [rehypeSlug] }),
+    }),
   ],
   markdown: {
     processor: unified({
-      rehypePlugins: [rehypeSlug],
+      rehypePlugins: [rehypeSlug, rehypeRaw, rehypeCloudinaryPicture],
     }),
     shikiConfig,
   },
