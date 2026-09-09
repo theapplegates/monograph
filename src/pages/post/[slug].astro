@@ -1,5 +1,6 @@
 ---
-import { Image } from "astro:assets";
+import Picture from "@/components/Picture.astro";
+import { imageUrl } from "@/lib/cloudinary.mjs";
 import { getCollection, render } from "astro:content";
 import LocalIcon from "@/components/LocalIcon.astro";
 import PostCard from "@/components/PostCard.astro";
@@ -38,14 +39,16 @@ interface Props {
 
 const { post, allPosts } = Astro.props;
 const { Content } = await render(post);
-const mdxComponents = { Callout, CodeGroup, CodeGroupItem };
+const mdxComponents = { Callout, CodeGroup, CodeGroupItem, CloudinaryPicture: Picture, Picture };
 const data = post.data;
 const related = getRelated(allPosts, post);
 const { newer, older } = getAdjacent(allPosts, post);
 const authorHref = `/author/${authorSlug(data.author.name)}/`;
 const articleUrl = new URL(postHref(post), siteConfig.siteUrl).toString();
 const socialImage = data.cover
-  ? new URL(data.cover.src.src, siteConfig.siteUrl).toString()
+  ? typeof data.cover.src === "string"
+    ? imageUrl(data.cover.src.slice("cloudinary:".length), Math.min(1200, data.cover.width!), "jpg")
+    : new URL(data.cover.src.src, siteConfig.siteUrl).toString()
   : new URL(siteConfig.socialImage, siteConfig.siteUrl).toString();
 const encodedUrl = encodeURIComponent(articleUrl);
 const encodedTitle = encodeURIComponent(data.title);
@@ -139,15 +142,29 @@ const structuredData = {
 
       {data.cover && (
         <figure class="article-image inner">
-          <Image
-            src={data.cover.src}
-            alt={data.cover.alt}
-            widths={[640, 960, 1200, 1600, 2000]}
-            sizes="(min-width: 1200px) 1200px, 100vw"
-            loading="eager"
-            decoding="async"
-            class="w-full"
-          />
+          {typeof data.cover.src === "string" ? (
+            <Picture
+              src={data.cover.src.slice("cloudinary:".length)}
+              alt={data.cover.alt}
+              width={data.cover.width!}
+              height={data.cover.height!}
+              breakpoints={data.cover.breakpoints!}
+              sizes="(min-width: 1200px) 1200px, 100vw"
+              loading="eager"
+              fetchpriority="high"
+              class="w-full"
+            />
+          ) : (
+            <img
+              src={data.cover.src.src}
+              width={data.cover.src.width}
+              height={data.cover.src.height}
+              alt={data.cover.alt}
+              loading="eager"
+              decoding="async"
+              class="w-full"
+            />
+          )}
           {data.cover.creditName && (
             <figcaption>
               {data.cover.creditUrl ? (

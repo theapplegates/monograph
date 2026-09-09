@@ -23,10 +23,26 @@ const posts = defineCollection({
        */
       cover: z
         .object({
-          src: image(),
+          src: z.union([z.string().startsWith("cloudinary:"), image()]),
+          width: z.number().int().positive().optional(),
+          height: z.number().int().positive().optional(),
+          breakpoints: z.array(z.number().int().positive()).min(1).optional(),
           alt: z.string(),
           creditName: z.string().optional(),
           creditUrl: z.url().optional(),
+        })
+        .superRefine((cover, ctx) => {
+          if (
+            typeof cover.src === "string" &&
+            cover.src.startsWith("cloudinary:") &&
+            (!cover.width || !cover.height || !cover.breakpoints?.length)
+          ) {
+            ctx.addIssue({
+              code: "custom",
+              message:
+                "Cloudinary covers require width, height and breakpoints from cloudinary:breakpoints.",
+            });
+          }
         })
         .optional(),
       /** Surfaces the post in the "Featured" list in the home sidebar. */

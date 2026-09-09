@@ -39,3 +39,8 @@ test-results
 *.njsproj
 *.sln
 *.sw?
+
+# Cloudinary upload credentials
+.env
+.env.*
+!.env.example

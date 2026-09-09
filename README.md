@@ -124,3 +124,7 @@ design and feature work is not included.
 
 MIT — free for personal and commercial projects. See [LICENSE](./LICENSE), which also lists the
 licenses of the bundled fonts, icons, and demo images.
+
+## Cloudinary responsive images
+
+This fork supports JXL → AVIF → WebP images without Sharp processing. See [CLOUDINARY.md](./CLOUDINARY.md) for upload commands, Markdown/MDX snippets and cover setup. The default Cloudinary cloud is `paulapplegate-com`.

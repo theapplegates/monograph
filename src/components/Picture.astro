@@ -1,0 +1,21 @@
+---
+import { pictureData } from "@/lib/cloudinary.mjs";
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number | string;
+  height: number | string;
+  breakpoints: number[] | string;
+  sizes?: string;
+  loading?: "eager" | "lazy";
+  fetchpriority?: "high" | "low" | "auto";
+  class?: string;
+}
+const { class: className, ...props } = Astro.props;
+const { sources, img } = pictureData(props);
+---
+<picture class={className}>
+  {sources.map(source => <source {...source} />)}
+  <img {...img} loading={props.loading || "lazy"} decoding="async" fetchpriority={props.fetchpriority || "auto"} />
+</picture>
